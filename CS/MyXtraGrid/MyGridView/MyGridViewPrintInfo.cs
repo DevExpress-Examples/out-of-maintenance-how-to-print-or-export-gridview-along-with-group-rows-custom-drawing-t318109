@@ -31,12 +31,12 @@ namespace MyXtraGrid
             get { return base.View as MyGridView; }
         }
 
-        public override void PrintRows(DevExpress.XtraPrinting.IBrickGraphics graph)
+        public override void PrintRows(BrickGraphics graph)
         {
             base.PrintRows(graph);
             (View.GetViewInfo() as MyGridViewInfo).IsDataDirty = true;
         }
-        protected override void PrintRow(GraphicsCache cache, IBrickGraphics graph, int rowHandle, int level)
+        protected override void PrintRow(GraphicsCache cache, BrickGraphics graph, int rowHandle, int level)
         {
             _graph = graph;
             base.PrintRow(cache, graph, rowHandle, level);
